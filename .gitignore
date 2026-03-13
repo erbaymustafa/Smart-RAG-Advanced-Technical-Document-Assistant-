@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+ENV/
+
+# Veritabanı ve Geçici Dosyalar
+chroma_db/
+temp_docs/
+feedback_logs.json
+
+# IDE
+.vscode/
+.idea/
