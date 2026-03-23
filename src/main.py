@@ -25,11 +25,13 @@ app.state.chat_history = [] # [{"id": 0, "q": "...", "a": "...", "feedback": Non
 
 @app.get("/")
 async def index(request: Request):
-    return templates.TemplateResponse("index.html", {
+    # Context sözlüğünü ayrı bir değişkende tanımlayıp gönderiyoruz
+    context = {
         "request": request, 
         "chat_history": app.state.chat_history,
         "extracted_text": app.state.extracted_text
-    })
+    }
+    return templates.TemplateResponse(request=request, name="index.html", context=context)
 
 @app.post("/upload")
 async def upload_file(request: Request, file: UploadFile = File(...)):
