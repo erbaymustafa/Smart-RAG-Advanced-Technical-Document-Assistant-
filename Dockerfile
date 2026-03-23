@@ -1,5 +1,5 @@
 # Python 3.10 tabanlı hafif bir imaj kullanıyoruz
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 # Sistem bağımlılıklarını yükle (OCR ve PDF işleme için gerekli)
 RUN apt-get update && apt-get install -y \
